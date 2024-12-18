@@ -1,6 +1,6 @@
-# Descrição
+# FlatBufferNet
 
-Este é um projeto de software que tem como objetivo [inserir objetivo principal do projeto, ex: resolver um problema específico, automatizar um processo, fornecer uma funcionalidade]. Ele foi desenvolvido utilizando [listar tecnologias e ferramentas principais, ex: .NET, RabbitMQ, MongoDB, etc.] e segue uma arquitetura [ex: MVC, DDD, microserviços, etc.] para garantir [escabilidade, desempenho, manutenibilidade, etc.].
+**FlatBufferNet** é um projeto de software desenvolvido para calcular a idade de uma pessoa com base na sua data de nascimento, utilizando o formato de serialização de dados **FlatBuffers** para persistência e manipulação eficiente dos dados. O projeto é desenvolvido com **.NET** e oferece uma forma compacta e rápida de armazenar e recuperar informações.
 
 ---
 
@@ -20,13 +20,13 @@ Este é um projeto de software que tem como objetivo [inserir objetivo principal
 
 ## Visão Geral
 
-Este projeto visa [explicar em poucas palavras o propósito do software e o valor que ele agrega]. Ele oferece as seguintes funcionalidades principais:
+Este projeto tem como objetivo calcular a idade de uma pessoa a partir de sua data de nascimento, utilizando **FlatBuffers** para serialização de dados e **.NET** como plataforma de desenvolvimento. Ele oferece as seguintes funcionalidades principais:
 
-- **Funcionalidade 1**: [Descrição breve da funcionalidade]
-- **Funcionalidade 2**: [Descrição breve da funcionalidade]
-- **Funcionalidade 3**: [Descrição breve da funcionalidade]
+- **Cálculo de Idade**: A partir da data de nascimento fornecida, o sistema calcula a idade exata da pessoa.
+- **Persistência de Dados**: Utiliza **FlatBuffers** para armazenar de forma eficiente os dados de entrada (nome e data de nascimento).
+- **Leitura e Escrita de Arquivo**: Os dados podem ser salvos e carregados de arquivos binários, otimizando o uso de memória.
 
-A arquitetura do projeto segue [exemplo: Domain-Driven Design (DDD)], o que garante [benefícios como flexibilidade, escalabilidade, etc.].
+A arquitetura do projeto segue o modelo **Clean Architecture**, separando as responsabilidades de forma a garantir fácil manutenção e escalabilidade.
 
 ---
 
@@ -34,9 +34,9 @@ A arquitetura do projeto segue [exemplo: Domain-Driven Design (DDD)], o que gara
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
-- **Tecnologia 1**: [Descrição da tecnologia 1, ex: .NET 8, Java, etc.]
-- **Tecnologia 2**: [Descrição da tecnologia 2, ex: RabbitMQ, MySQL, etc.]
-- **Tecnologia 3**: [Descrição da tecnologia 3, ex: Docker, Kubernetes, etc.]
+- **.NET 8**: Plataforma de desenvolvimento principal para a criação do aplicativo.
+- **Google.FlatBuffers**: Biblioteca para serialização e deserialização de dados binários.
+- **C#**: Linguagem de programação utilizada para implementar a lógica do projeto.
 
 ---
 
@@ -46,16 +46,16 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 Certifique-se de que você tem as seguintes ferramentas instaladas em seu ambiente de desenvolvimento:
 
-- **Ferramenta 1**: [Link para o download ou instrução de instalação]
-- **Ferramenta 2**: [Link para o download ou instrução de instalação]
+- **.NET SDK** (versão 8 ou superior): [Download do .NET](https://dotnet.microsoft.com/download)
+- **FlatBuffers Compiler (`flatc`)**: [Instruções para instalar o `flatc`](https://google.github.io/flatbuffers/)
 
 ### Passos para Instalar
 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-projeto.git
-   cd nome-do-projeto
+   git clone https://github.com/seu-usuario/FlatBufferNet.git
+   cd FlatBufferNet
    ```
 
 2. Instale as dependências do projeto:
@@ -68,7 +68,11 @@ Certifique-se de que você tem as seguintes ferramentas instaladas em seu ambien
    dotnet restore
    ```
 
-3. [Instrução de configuração, ex: configurar o banco de dados, variáveis de ambiente, etc.]
+3. Gere o código C# a partir do schema do FlatBuffers:
+
+   ```bash
+   flatc --csharp Pessoa.fbs
+   ```
 
 4. Para rodar o projeto localmente, use o seguinte comando:
 
@@ -76,79 +80,53 @@ Certifique-se de que você tem as seguintes ferramentas instaladas em seu ambien
    dotnet run
    ```
 
-   Ou, se estiver usando containers Docker, execute:
-
-   ```bash
-   docker-compose up
-   ```
-
 ---
 
 ## Como Usar
 
-Este projeto pode ser utilizado para [explicar de forma prática como o usuário pode interagir com o sistema]. Exemplos de uso:
+Este projeto pode ser utilizado para calcular a idade de uma pessoa a partir de sua data de nascimento. O exemplo abaixo mostra como a informação é manipulada.
 
-1. **Endpoint 1**:
-   - **Método HTTP**: GET/POST
-   - **URL**: `/api/exemplo`
-   - **Descrição**: [Breve descrição do que esse endpoint faz]
-   
-2. **Endpoint 2**:
-   - **Método HTTP**: GET/POST
-   - **URL**: `/api/exemplo/{id}`
-   - **Descrição**: [Breve descrição do que esse endpoint faz]
+1. **Input**: Nome e Data de Nascimento de uma pessoa.
+2. **Processamento**: O sistema calcula a idade a partir da data fornecida.
+3. **Output**: A idade da pessoa será exibida no console.
 
-### Exemplos de uso com cURL ou Postman
+### Exemplos de Uso
 
-**Requisição de exemplo**:
+Após rodar o projeto, você verá a saída no console:
 
 ```bash
-curl -X GET http://localhost:5000/api/exemplo -H "Content-Type: application/json"
+Nome: João
+Idade: 34 anos
+```
+
+### Como Modificar os Dados
+
+Você pode alterar o nome e a data de nascimento no código `Program.cs`:
+
+```csharp
+string nome = "João";
+DateTime dataNascimento = new DateTime(1990, 5, 15); // Exemplo de data de nascimento
 ```
 
 ---
 
 ## Estrutura de Diretórios
 
-A estrutura do projeto segue uma organização modular e de fácil manutenção:
+A estrutura do projeto segue uma organização simples e modular:
 
 ```
 src/
-├── API/                # Camada de apresentação (controladores e endpoints da API)
-├── Application/        # Camada de lógica de negócios
-├── Domain/             # Camada de domínio (entidades e interfaces)
-├── Infrastructure/     # Camada de infraestrutura (conexões com banco, serviços, etc.)
+├── Pessoa.fbs              # Arquivo de schema do FlatBuffers
+├── Program.cs              # Lógica principal do cálculo de idade
+├── obj/                    # Arquivos temporários de build
+└── bin/                    # Arquivos de saída (binários)
 ```
 
 ---
 
 ## Configuração
 
-Este projeto exige algumas configurações adicionais, como variáveis de ambiente, arquivos de configuração ou serviços externos. As instruções de configuração podem ser encontradas abaixo:
-
-### Configuração do Banco de Dados
-
-1. No arquivo `appsettings.json`, adicione suas configurações de banco de dados, por exemplo:
-
-```json
-{
-  "DatabaseSettings": {
-    "ConnectionString": "mongodb://localhost:27017",
-    "DatabaseName": "MeuBancoDeDados"
-  }
-}
-```
-
-2. Para configuração de variáveis de ambiente, adicione as seguintes variáveis ao seu ambiente de execução:
-
-```bash
-DATABASE_URL=mongodb://localhost:27017
-SECRET_KEY=alguma_chave_secreta
-```
-
-### Configuração de API Externa (se necessário)
-
-Caso o projeto dependa de APIs externas, configure as credenciais ou chaves de acesso no arquivo de configuração.
+Este projeto não exige configurações complexas, mas pode ser estendido para incluir outros parâmetros de configuração, como variáveis de ambiente ou conexões com outros serviços, caso necessário.
 
 ---
 
@@ -166,7 +144,7 @@ Contribuições são bem-vindas! Para contribuir com o projeto, siga estas etapa
 
 ## Licença
 
-Este projeto está licenciado sob a Licença [Nome da Licença, ex: MIT]. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a Licença [MIT](LICENSE). Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
@@ -176,3 +154,4 @@ Caso tenha dúvidas ou sugestões, entre em contato:
 
 - **Email**: [dopme.io](mailto:daniloopinheiro@dopme.io)
 - **LinkedIn**: [Danilo O. Pinheiro](https://www.linkedin.com/in/daniloopinheiro/)
+- **YouTube**: [dopme](https://www.youtube.com/@dopme-io)
