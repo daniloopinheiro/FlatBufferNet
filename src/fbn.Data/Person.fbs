@@ -1,0 +1,8 @@
+﻿namespace fbn.Data;
+
+table Person {
+    name: string;
+    dateBirth: long;
+}
+
+root_type Person;
