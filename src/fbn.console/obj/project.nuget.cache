@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IjYPEziarfc=",
+  "success": true,
+  "projectFilePath": "/home/dopme/Source/repos/ticketizze/FlatBufferNet/src/fbn.console/fbn.console.csproj",
+  "expectedPackageFiles": [
+    "/home/dopme/.nuget/packages/google.flatbuffers/24.3.25/google.flatbuffers.24.3.25.nupkg.sha512"
+  ],
+  "logs": []
+}
