@@ -1,0 +1,106 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Google.FlatBuffers/24.3.25": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Google.FlatBuffers.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Google.FlatBuffers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Google.FlatBuffers/24.3.25": {
+      "sha512": "w1mv5UCKLPMYj1aVymTlrtUOOtdbOEPsn4XxwUGvpS35j+WrWSxyqvB7EhSel1mXgKZ1DaPTIKr1bORXBRVhGQ==",
+      "type": "package",
+      "path": "google.flatbuffers/24.3.25",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "flatbuffers.png",
+        "google.flatbuffers.24.3.25.nupkg.sha512",
+        "google.flatbuffers.nuspec",
+        "lib/net6.0/Google.FlatBuffers.dll",
+        "lib/net8.0/Google.FlatBuffers.dll",
+        "lib/netstandard2.1/Google.FlatBuffers.dll"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Google.FlatBuffers >= 24.3.25"
+    ]
+  },
+  "packageFolders": {
+    "/home/dopme/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/dopme/Source/repos/ticketizze/FlatBufferNet/src/fbn.Data/fbn.Data.csproj",
+      "projectName": "fbn.Data",
+      "projectPath": "/home/dopme/Source/repos/ticketizze/FlatBufferNet/src/fbn.Data/fbn.Data.csproj",
+      "packagesPath": "/home/dopme/.nuget/packages/",
+      "outputPath": "/home/dopme/Source/repos/ticketizze/FlatBufferNet/src/fbn.Data/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/dopme/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Google.FlatBuffers": {
+            "target": "Package",
+            "version": "[24.3.25, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/dopme/.dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
