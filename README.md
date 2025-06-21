@@ -1,5 +1,7 @@
 ![buffers](https://github.com/user-attachments/assets/ea988313-efd9-4df1-8155-e3d3644edb51)
 
+[![.NET](https://github.com/daniloopinheiro/FlatBufferNet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/daniloopinheiro/FlatBufferNet/actions/workflows/dotnet.yml)
+
 # FlatBufferNet
 
 **FlatBufferNet** é um projeto de software desenvolvido para calcular a idade de uma pessoa com base na sua data de nascimento, utilizando o formato de serialização de dados **FlatBuffers** para persistência e manipulação eficiente dos dados. O projeto é desenvolvido com **.NET** e oferece uma forma compacta e rápida de armazenar e recuperar informações.
