@@ -159,3 +159,7 @@ Caso tenha dúvidas ou sugestões, entre em contato:
 - **Email**: [dopme.io](mailto:daniloopinheiro@dopme.io)
 - **LinkedIn**: [Danilo O. Pinheiro](https://www.linkedin.com/in/daniloopinheiro/)
 - **YouTube**: [dopme](https://www.youtube.com/@dopme-io)
+
+---
+
+<p align="center"> Feito com ❤️ por <strong>Danilo O. Pinheiro</strong><br/> <a href="https://devsfree.com.br" target="_blank">DevsFree</a> • <a href="https://dopme.io" target="_blank">dopme.io</a> </p>
